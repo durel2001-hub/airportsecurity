@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Submission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .column {
+            width: 100%;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        @media only screen and (min-width: 768px) {
+            .column {
+                float: left;
+                width: 33.33%;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .column {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Flight Submission Form</h2>
+        <form action="process_form.php" method="post">
+            <div class="form-group">
+                <label for="bay_number">Bay Number</label>
+                <input type="text" id="bay_number" name="bay_number" required>
+            </div>
+            <div class="form-group">
+                <label for="reg_no">Reg No A/C</label>
+                <input type="text" id="reg_no" name="reg_no" required>
+            </div>
+            <div class="form-group">
+                <label for="flight_no">Flight No of A/C</label>
+                <input type="text" id="flight_no" name="flight_no" required>
+            </div>
+            <div class="form-group">
+                <label for="date_arrival">Date of Arrival</label>
+                <input type="date" id="date_arrival" name="date_arrival" required>
+            </div>
+            <div class="form-group">
+                <label for="time_arrival">Time of Arrival</label>
+                <input type="time" id="time_arrival" name="time_arrival" required>
+            </div>
+            <div class="form-group">
+                <label for="time_departure">Time of Departure</label>
+                <input type="time" id="time_departure" name="time_departure" required>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <h3>Drivers</h3>
+                    <div class="form-group">
+                        <label for="driver_name_1">Driver 1 Name</label>
+                        <input type="text" id="driver_name_1" name="driver_name_1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="driver_id_1">Driver 1 Staff ID</label>
+                        <input type="text" id="driver_id_1" name="driver_id_1" required>
+                    </div>
+                </div>
+                <div class="column">
+                    <h3>Loaders</h3>
+                    <div class="form-group">
+                        <label for="loader_name_1">Loader 1 Name</label>
+                        <input type="text" id="loader_name_1" name="loader_name_1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loader_id_1">Loader 1 Staff ID</label>
+                        <input type="text" id="loader_id_1" name="loader_id_1" required>
+                    </div>
+                </div>
+                <div class="column">
+                    <h3>Groomers</h3>
+                    <div class="form-group">
+                        <label for="groomer_name_1">Groomer 1 Name</label>
+                        <input type="text" id="groomer_name_1" name="groomer_name_1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="groomer_id_1">Groomer 1 Staff ID</label>
+                        <input type="text" id="groomer_id_1" name="groomer_id_1" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="remarks">Any other remarks</label>
+                <textarea id="remarks" name="remarks" rows="4"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
